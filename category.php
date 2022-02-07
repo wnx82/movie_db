@@ -10,7 +10,7 @@
     <form action="category_save.php" method="POST">
         <div>
             <label>Name</label>
-            <input type="text" name="nom" value="" placeholder="Place ici votre nom">
+            <input type="text" name="name" value="" placeholder="Placez ici votre nom de catégorie">
         </div>
         <div>
             <input type="submit" value="Envoyer">

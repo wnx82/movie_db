@@ -9,9 +9,10 @@ $user= 'eleve';
 $pass= 'eleve';
 
 try {
-    $dbh = new PDO('mysql:host=localhost;port=3307;dbname=movie_db', $user, $pass);
-    echo 'ça marche';
+    $db = new PDO('mysql:host=localhost;port=3307;dbname=movie_db', $user, $pass);
+    //echo 'ça marche';
 } catch (PDOException $e) {
+    //echo 'Le site est en maintenance, erreur bdd';
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
