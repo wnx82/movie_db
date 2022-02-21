@@ -1,3 +1,17 @@
+<?php
+
+//récupérer l'id si ID
+// si l'id existe
+        // Récupérer la connexion BDD
+        //Requete pour récupérer la catégorie
+        // print_r(catégorie)
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
