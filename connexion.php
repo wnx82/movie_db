@@ -3,7 +3,6 @@
 
 // PDO  https://www.php.net/manual/en/pdo.connections.php
 
-use JetBrains\PhpStorm\Internal\PhpStormStubsElementAvailable;
 
 $user= 'eleve';
 $pass= 'eleve';

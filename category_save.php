@@ -8,6 +8,10 @@ if (!isset($_POST['name']) || empty($_POST['name'])){
     exit;
 }
 $name=$_POST['name'];
-$db-> query ('insert into category (name) values ("'.$name.'")');exit;
 
 
+$result = $db->query('insert into category (name) values ("'.$name.'")');
+
+
+/*var_dump($result);
+print_r($db->errorInfo());*/
