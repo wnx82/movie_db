@@ -1,12 +1,31 @@
 <?php
 
-//récupérer l'id si ID
+//récupérer l'id si ID.
+
+//$id=isset($_get['id']) ? $_GET['id'] : null;
+$id=$_GET['id']  ?? null;
+
+
+//forcer le type
+$id = (int) $id;
+
 // si l'id existe
+if(isset($id)){
+
         // Récupérer la connexion BDD
+        require_once ('connexion.php');
+
         //Requete pour récupérer la catégorie
+        $req= $db->query('select*from category where id='.$id.'')or die (print_r($db->errorInfo()));
+        while ($donnees=$req->fetch()){
         // print_r(catégorie)
+        print_r($donnees['name']);       
+        }
 
+//       $query = $db->query ('update category set name='.$_POST['name'].'  where id='.$id);
 
+ 
+    }
 
 
 ?>
@@ -24,7 +43,9 @@
     <form action="category_save.php" method="POST">
         <div>
             <label>Name</label>
-            <input type="text" name="name" value="" placeholder="Placez ici votre nom de catégorie">
+            <input type="text" name="name" value="<?=$donnees['name'] ?? '' ?>" placeholder="Placez ici votre nom de catégorie">
+
+
         </div>
         <div>
             <input type="submit" value="Envoyer">
