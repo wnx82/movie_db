@@ -11,6 +11,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +19,9 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
+
 <body>
-<button class="btn btn-primary">dddddd</button>
+    <button class="btn btn-primary">dddddd</button>
     <table class="table table-dark">
         <tr>
             <th>#</th>
@@ -27,16 +29,17 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
             <th>Editer</th>
             <th>Supprimer</th>
         </tr>
-        <?php foreach($categories as $category): ?>
+        <?php foreach ($categories as $category) : ?>
             <tr>
-                <td><?=$category['id'] ?></td>
-                <td><?=$category['name'] ?></td>
-                <td><a href="category.php?id=<?=$category['id'] ?>"><button class="btn btn-primary">Editer</button></A></td>
-                <td><a onclick="return confirm('Voulez vous vraiment supprimer cet élément?')" href="category_remove.php?id=<?=$category['id'] ?>"><button class="btn btn-danger">Supprimer</button></A></td>
+                <td><?= $category['id'] ?></td>
+                <td><?= $category['name'] ?></td>
+                <td><a href="category.php?id=<?= $category['id'] ?>"><button class="btn btn-primary">Editer</button></A></td>
+                <td><a onclick="return confirm('Voulez vous vraiment supprimer cet élément?')" href="category_remove.php?id=<?= $category['id'] ?>"><button class="btn btn-danger">Supprimer</button></A></td>
 
             </tr>
-        <?php endforeach; ?>    
+        <?php endforeach; ?>
     </table>
 
 </body>
+
 </html>
