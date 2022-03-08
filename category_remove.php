@@ -24,4 +24,8 @@ if($query == false){
 if($query->rowCount()===0){
     exit('Enregistrement inconnu !!');
 }
+else if($query->rowCount()===1){
+    exit('Ligne enlevée');
+    
+}
 return header('location: category_list.php');
