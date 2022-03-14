@@ -13,12 +13,13 @@ $name = $_POST['name'];
 
 if ($id != null) {
     $query = $db->query("update category set name='$name' where id=$id");
+    echo "Catégorie $id mise à jour";
 } else {
     $query = $db->query('insert into category (name) values ("' . $name . '")');
+    echo "categorie créée";
 }
+header("Refresh:3; url=category_list.php");
 
-
-header('location:category_list.php');
 
 
 

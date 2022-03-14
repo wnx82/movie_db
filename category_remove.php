@@ -25,7 +25,6 @@ if($query->rowCount()===0){
     exit('Enregistrement inconnu !!');
 }
 else if($query->rowCount()===1){
-    exit('Ligne enlevée');
-    
+     echo 'Enregistrement effacé !!';
 }
-return header('location: category_list.php');
+return header('Refresh : 2; URL=category_list.php');

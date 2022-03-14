@@ -22,6 +22,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <button class="btn btn-primary">dddddd</button>
+    <a class="btn btn-primary btn-lg" href="category.php" role="button">Ajouter</a>
     <table class="table table-dark">
         <tr>
             <th>#</th>

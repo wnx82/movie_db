@@ -10,11 +10,6 @@ echo '<h1>Movie DB</h1>';
     <title>Document</title>
 </head>
 <body>
-    
-
 <a href="category_list.php"> category_list</A>
-
-
-
 </body>
 </html>
