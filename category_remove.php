@@ -1,7 +1,7 @@
 <?php
 // connexion à la base
 require_once ('connexion.php');
-
+//$id=isset($_get['id']) ? $_GET['id'] : null;
 $id = $_GET['id'] ?? null;
 
 //si l'id est null => liste
@@ -10,8 +10,6 @@ if($id == null){
 }
 //forcer le type
 $id = (int) $id;
-//$id=isset($_get['id']) ? $_GET['id'] : null;
-// $id=$_GET['id']  ?? null;
 
 //code supprimer
 $query = $db->query('delete from category where id=' . $id);
@@ -19,13 +17,13 @@ $query = $db->query('delete from category where id=' . $id);
 if($query == false){
     exit('Une erreur s\'est produite, veuillez réessayer plus tard !');
 }
-
 //si 0 ligne traitée
 if($query->rowCount()===0){
     exit('Enregistrement inconnu !!');
 }
+//Si une ligne est traitée
 else if($query->rowCount()===1){
     exit('Ligne enlevée');
-    
 }
+//
 return header('location: category_list.php');
