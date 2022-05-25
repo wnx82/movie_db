@@ -17,11 +17,6 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-<<<<<<< HEAD
-
-    <a class="btn btn-primary btn-lg" href="category.php" role="button">Ajouter</a>
-=======
->>>>>>> 9bc8945aafa33f92b8bd4353e01ebfdda4efb0f3
     <table class="table table-dark">
         <tr>
             <th>#</th>
@@ -38,19 +33,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
                 <a href="category.php?id=<?= $category['id'] ?>" class="btn btn-primary">MODIFIER</a>
             </td>
         </tr>
-<<<<<<< HEAD
-        <?php if($query->rowCount()===0){
-        echo '<tr> <Td colspan=4      style="text-align:center;"> Aucun enregistrement !!</TD></tr>';
-}?>
-        <?php foreach ($categories as $category) : ?>
-            <tr>
-                <td><?= $category['id'] ?></td>
-                <td><?= $category['name'] ?></td>
-                <td><a href="category.php?id=<?= $category['id'] ?>"><button class="btn btn-primary">Editer</button></A></td>
-                <td><a onclick="return confirm('Voulez vous vraiment supprimer cet élément?')" href="category_remove.php?id=<?= $category['id'] ?>"><button class="btn btn-danger">Supprimer</button></A></td>
-=======
     <?php endforeach; ?>
->>>>>>> 9bc8945aafa33f92b8bd4353e01ebfdda4efb0f3
 
     </table>
 

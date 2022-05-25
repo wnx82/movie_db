@@ -23,13 +23,6 @@ if($query->rowCount()===0){
 }
 //Si une ligne est traitée
 else if($query->rowCount()===1){
-<<<<<<< HEAD
      echo 'Enregistrement effacé !!';
 }
 return header('Refresh : 2; URL=category_list.php');
-=======
-    exit('Ligne enlevée');
-}
-//
-return header('location: category_list.php');
->>>>>>> 9bc8945aafa33f92b8bd4353e01ebfdda4efb0f3
