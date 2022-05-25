@@ -21,7 +21,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <button class="btn btn-primary">dddddd</button>
+
     <a class="btn btn-primary btn-lg" href="category.php" role="button">Ajouter</a>
     <table class="table table-dark">
         <tr>
@@ -30,6 +30,9 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
             <th>Editer</th>
             <th>Supprimer</th>
         </tr>
+        <?php if($query->rowCount()===0){
+        echo '<tr> <Td colspan=4      style="text-align:center;"> Aucun enregistrement !!</TD></tr>';
+}?>
         <?php foreach ($categories as $category) : ?>
             <tr>
                 <td><?= $category['id'] ?></td>
