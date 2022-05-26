@@ -18,7 +18,7 @@ if ($id != null) {
     $query = $db->query('insert into category (name) values ("' . $name . '")');
     echo "categorie créée";
 }
-header("Refresh:3; url=category_list.php");
+header("Refresh:1; url=category_list.php");
 
 
 

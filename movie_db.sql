@@ -26,7 +26,7 @@ CREATE TABLE `category` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (21,'Sauvegarde complète'),(23,'Pharailde Flypo');
+INSERT INTO `category` VALUES (1,'Action'),(2,'qsdfqdsf'),(3,'Horreur');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,6 +62,7 @@ CREATE TABLE `category_movie` (
 
 LOCK TABLES `category_movie` WRITE;
 /*!40000 ALTER TABLE `category_movie` DISABLE KEYS */;
+INSERT INTO `category_movie` VALUES (1,1),(3,1);
 /*!40000 ALTER TABLE `category_movie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,10 +76,10 @@ DROP TABLE IF EXISTS `movie`;
 CREATE TABLE `movie` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `rate` varchar(45) NOT NULL,
+  `release` varchar(45) NOT NULL,
   `duration` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='vie';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='vie';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +88,7 @@ CREATE TABLE `movie` (
 
 LOCK TABLES `movie` WRITE;
 /*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+INSERT INTO `movie` VALUES (1,'Braveheart','1995-05-05',122);
 /*!40000 ALTER TABLE `movie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,12 +102,12 @@ DROP TABLE IF EXISTS `rate`;
 CREATE TABLE `rate` (
   `idrate` int NOT NULL AUTO_INCREMENT,
   `rating` float NOT NULL,
-  `text` text,
-  `fk_movie` int NOT NULL,
+  `comment` text,
+  `movie_id` int NOT NULL,
   PRIMARY KEY (`idrate`),
-  KEY `fk_cm_movie_idx` (`fk_movie`),
-  CONSTRAINT `fk_movie_rate` FOREIGN KEY (`fk_movie`) REFERENCES `movie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `fk_cm_movie_idx` (`movie_id`),
+  CONSTRAINT `fk_movie_rate` FOREIGN KEY (`movie_id`) REFERENCES `movie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,6 +116,7 @@ CREATE TABLE `rate` (
 
 LOCK TABLES `rate` WRITE;
 /*!40000 ALTER TABLE `rate` DISABLE KEYS */;
+INSERT INTO `rate` VALUES (21,5,'Excellent\r\n',1),(22,4,'Un classique',1),(23,2,'Moi j\'ai pas aimé parce que j\'suis un con\r\n',1);
 /*!40000 ALTER TABLE `rate` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -126,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-14 18:12:26
+-- Dump completed on 2022-05-26 14:27:17
